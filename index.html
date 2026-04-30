@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kashmir & Leh Ladakh — 7-Day Dream Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --snow: #f8f7f4;
+    --ink: #1a1814;
+    --ink2: #3d3a33;
+    --muted: #7a7469;
+    --line: rgba(0,0,0,0.1);
+    --card: #ffffff;
+    --saffron: #c4621a;
+    --saffron-light: #fdf1e8;
+    --teal: #0f6e56;
+    --teal-light: #e1f5ee;
+    --indigo: #3c348a;
+    --indigo-light: #eeedfe;
+    --gold: #ba7517;
+    --gold-light: #faeeda;
+    --pill-r: 100px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--snow);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--ink);
+    color: #f8f7f4;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--saffron);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: var(--pill-r);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+  }
+  .hero h1 em { font-style: italic; color: #d4a56a; }
+  .hero p {
+    font-size: 1.05rem;
+    color: rgba(248,247,244,0.65);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .val {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #d4a56a;
+  }
+  .hero-stat .lbl {
+    font-size: 0.78rem;
+    color: rgba(248,247,244,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ── NAV TABS ── */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--card);
+    border-bottom: 1px solid var(--line);
+    padding: 0 2rem;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .sticky-nav::-webkit-scrollbar { display: none; }
+  .nav-tab {
+    flex-shrink: 0;
+    padding: 1rem 1.1rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.02em;
+  }
+  .nav-tab:hover { color: var(--ink); }
+  .nav-tab.active { color: var(--saffron); border-bottom-color: var(--saffron); }
+
+  /* ── MAIN LAYOUT ── */
+  .main { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ── ROUTE BANNER ── */
+  .route-banner {
+    background: var(--indigo-light);
+    border: 1px solid rgba(83,74,183,0.2);
+    border-radius: 14px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .route-stop {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--indigo);
+  }
+  .route-dot {
+    width: 8px; height: 8px;
+    background: var(--indigo);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .route-arrow {
+    color: var(--indigo);
+    opacity: 0.4;
+    font-size: 1rem;
+  }
+
+  /* ── SECTION HEADING ── */
+  .sec-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .sec-sub {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 2rem;
+  }
+
+  /* ── DAY CARDS ── */
+  .day-grid { display: grid; gap: 1.5rem; }
+  .day-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .day-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+  .day-header {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .day-num {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .day-title { flex: 1; }
+  .day-title h3 { font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+  .day-title p { font-size: 0.8rem; color: var(--muted); }
+  .day-toggle {
+    font-size: 1.2rem;
+    color: var(--muted);
+    transition: transform 0.2s;
+  }
+  .day-card.open .day-toggle { transform: rotate(180deg); }
+
+  .day-body {
+    display: none;
+    padding: 1.5rem;
+  }
+  .day-card.open .day-body { display: block; }
+
+  /* timeline inside day */
+  .timeline { list-style: none; position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px; top: 8px; bottom: 8px;
+    width: 1px;
+    background: var(--line);
+  }
+  .timeline li {
+    position: relative;
+    margin-bottom: 1.25rem;
+  }
+  .timeline li::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: 7px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    border: 2px solid;
+    background: var(--card);
+  }
+  .tl-time {
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 3px;
+  }
+  .tl-title { font-weight: 500; font-size: 0.95rem; margin-bottom: 3px; }
+  .tl-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+  .tl-morning li::before { border-color: #f59e0b; }
+  .tl-morning .tl-time { color: #b45309; }
+  .tl-afternoon li::before { border-color: var(--teal); }
+  .tl-afternoon .tl-time { color: var(--teal); }
+  .tl-evening li::before { border-color: var(--indigo); }
+  .tl-evening .tl-time { color: var(--indigo); }
+
+  .day-meals {
+    margin-top: 1rem;
+    display: flex; gap: 0.6rem; flex-wrap: wrap;
+  }
+  .meal-pill {
+    background: var(--saffron-light);
+    color: var(--saffron);
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: var(--pill-r);
+    font-weight: 500;
+  }
+  .stay-pill {
+    background: var(--teal-light);
+    color: var(--teal);
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: var(--pill-r);
+    font-weight: 500;
+  }
+  .dist-pill {
+    background: var(--indigo-light);
+    color: var(--indigo);
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: var(--pill-r);
+    font-weight: 500;
+  }
+
+  /* ── COST SECTION ── */
+  .cost-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .cost-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.2rem 1.25rem;
+  }
+  .cost-card .icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
+  .cost-card .label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .cost-card .amount { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: var(--ink); }
+  .cost-card .note { font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
+
+  .cost-table-wrap {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  .cost-table-title {
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    background: var(--snow);
+    border-bottom: 1px solid var(--line);
+    color: var(--ink2);
+  }
+  .cost-table { width: 100%; border-collapse: collapse; }
+  .cost-table th {
+    text-align: left;
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .cost-table td {
+    padding: 0.85rem 1.5rem;
+    font-size: 0.88rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .cost-table tr:last-child td { border-bottom: none; }
+  .cost-table tr:hover td { background: var(--snow); }
+  .cost-table .amt { font-weight: 500; white-space: nowrap; }
+  .cost-table .total-row td { font-weight: 600; background: var(--ink); color: white; }
+  .cost-table .total-row td:first-child { border-radius: 0 0 0 14px; }
+  .cost-table .total-row td:last-child { border-radius: 0 0 14px 0; }
+
+  .per-person-note {
+    background: var(--gold-light);
+    border: 1px solid rgba(186,117,23,0.2);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--gold);
+    margin-bottom: 2rem;
+  }
+  .per-person-note strong { font-weight: 500; }
+
+  /* ── TIPS ── */
+  .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+  .tip-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .tip-card .tip-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+  .tip-card h4 { font-size: 0.88rem; font-weight: 500; margin-bottom: 0.4rem; }
+  .tip-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+
+  /* ── TRAIN INFO ── */
+  .train-card {
+    background: var(--ink);
+    color: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .train-card::after {
+    content: '🚂';
+    position: absolute;
+    right: 2rem; top: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    opacity: 0.12;
+  }
+  .train-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    color: #d4a56a;
+  }
+  .train-card p { font-size: 0.88rem; color: rgba(255,255,255,0.6); margin-bottom: 1.25rem; }
+  .train-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .train-meta-item .lbl { font-size: 0.7rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.08em; }
+  .train-meta-item .val { font-size: 1rem; font-weight: 500; color: white; }
+  .class-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+    margin-top: 1.5rem;
+    color: rgba(255,255,255,0.85);
+  }
+  .class-table th {
+    text-align: left;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255,255,255,0.08);
+    font-weight: 500;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+  .class-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .class-table tr:last-child td { border-bottom: none; }
+
+  /* ── PACKING ── */
+  .pack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .pack-cat {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+  .pack-cat h4 { font-size: 0.82rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.75rem; }
+  .pack-cat ul { list-style: none; }
+  .pack-cat li { font-size: 0.85rem; color: var(--ink2); padding: 3px 0; display: flex; align-items: flex-start; gap: 6px; }
+  .pack-cat li::before { content: '·'; color: var(--saffron); font-weight: 700; margin-top: -1px; }
+
+  /* ── OVERVIEW ── */
+  .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+  .ov-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+  }
+  .ov-card .big { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600; }
+  .ov-card .lbl { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 3px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .hero { padding: 3.5rem 1.5rem 3rem; }
+    .hero-stats { gap: 1.5rem; }
+    .main { padding: 2rem 1rem; }
+    .cost-table th, .cost-table td { padding: 0.75rem 1rem; }
+    .train-card { padding: 1.5rem; }
+    .train-card::after { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">The Ultimate 7-Day Journey</div>
+  <h1>Delhi to <em>Kashmir</em> & Leh Ladakh</h1>
+  <p>By the iconic Vande Bharat Sleeper Train · Private luxury SUV · 7 unforgettable days</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><span class="val">7</span><span class="lbl">Days</span></div>
+    <div class="hero-stat"><span class="val">1,300+</span><span class="lbl">Kilometres</span></div>
+    <div class="hero-stat"><span class="val">18,380 ft</span><span class="lbl">Highest Pass</span></div>
+    <div class="hero-stat"><span class="val">₹75k</span><span class="lbl">Per Person Est.</span></div>
+    <div class="hero-stat"><span class="val">3</span><span class="lbl">Friends</span></div>
+  </div>
+</div>
+
+<nav class="sticky-nav">
+  <button class="nav-tab active" onclick="showSection('overview')">Overview</button>
+  <button class="nav-tab" onclick="showSection('train')">🚆 Train</button>
+  <button class="nav-tab" onclick="showSection('itinerary')">📅 Itinerary</button>
+  <button class="nav-tab" onclick="showSection('costs')">💰 Costs</button>
+  <button class="nav-tab" onclick="showSection('tips')">💡 Tips</button>
+  <button class="nav-tab" onclick="showSection('packing')">🎒 Packing</button>
+</nav>
+
+<div class="main">
+
+  <!-- ══════════════════════ OVERVIEW ══════════════════════ -->
+  <div class="section active" id="section-overview">
+    <h2 class="sec-heading">The Journey at a Glance</h2>
+    <p class="sec-sub">From the bustle of Delhi to the rooftop of the world — here's your road map.</p>
+
+    <div class="route-banner">
+      <div class="route-stop"><div class="route-dot"></div> New Delhi</div>
+      <div class="route-arrow">→</div>
+      <div class="route-stop"><div class="route-dot"></div> Srinagar (Dal Lake)</div>
+      <div class="route-arrow">→</div>
+      <div class="route-stop"><div class="route-dot"></div> Gulmarg</div>
+      <div class="route-arrow">→</div>
+      <div class="route-stop"><div class="route-dot"></div> Sonamarg / Kargil</div>
+      <div class="route-arrow">→</div>
+      <div class="route-stop"><div class="route-dot"></div> Leh</div>
+      <div class="route-arrow">→</div>
+      <div class="route-stop"><div class="route-dot"></div> Nubra Valley</div>
+      <div class="route-arrow">→</div>
+      <div class="route-stop"><div class="route-dot"></div> Pangong Tso</div>
+    </div>
+
+    <div class="overview-grid">
+      <div class="ov-card"><div class="big" style="color:var(--saffron)">Day 0</div><div class="lbl">Night Train from Delhi</div></div>
+      <div class="ov-card"><div class="big" style="color:var(--teal)">Days 1–2</div><div class="lbl">Kashmir — Srinagar & Gulmarg</div></div>
+      <div class="ov-card"><div class="big" style="color:var(--indigo)">Day 3</div><div class="lbl">Sonamarg + Drive to Kargil</div></div>
+      <div class="ov-card"><div class="big" style="color:var(--gold)">Day 4</div><div class="lbl">Kargil → Leh via Lamayuru</div></div>
+      <div class="ov-card"><div class="big" style="color:var(--saffron)">Day 5</div><div class="lbl">Leh — Palace, Stupa, Market</div></div>
+      <div class="ov-card"><div class="big" style="color:var(--teal)">Day 6</div><div class="lbl">Khardung La → Nubra Valley</div></div>
+      <div class="ov-card"><div class="big" style="color:var(--indigo)">Day 7</div><div class="lbl">Pangong Tso → Fly Home</div></div>
+    </div>
+
+    <div style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:1.5rem; margin-bottom:1.5rem;">
+      <h3 style="font-size:1rem; font-weight:500; margin-bottom:1rem;">Who's in the group?</h3>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <div style="flex:1; min-width:160px; background:var(--saffron-light); border-radius:10px; padding:1rem;">
+          <div style="font-weight:500; font-size:0.9rem; color:var(--saffron)">🧍 You + 2 Friends</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:4px;">3 travellers sharing costs</div>
+        </div>
+        <div style="flex:1; min-width:160px; background:var(--gold-light); border-radius:10px; padding:1rem;">
+          <div style="font-weight:500; font-size:0.9rem; color:var(--gold)">💰 Rich Friend's SUV</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:4px;">Big Innova Crysta + driver — fully covered by friend</div>
+        </div>
+        <div style="flex:1; min-width:160px; background:var(--teal-light); border-radius:10px; padding:1rem;">
+          <div style="font-weight:500; font-size:0.9rem; color:var(--teal)">🚆 Train to Srinagar</div>
+          <div style="font-size:0.8rem; color:var(--muted); margin-top:4px;">Vande Bharat Sleeper — departing Delhi 7 PM</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--indigo-light); border:1px solid rgba(83,74,183,0.18); border-radius:12px; padding:1rem 1.25rem; font-size:0.85rem; color:var(--indigo);">
+      <strong>Best time to go:</strong> June – September. Roads are open, skies clear, Zoji La pass accessible. Pangong and Nubra require Inner Line Permits (arranged in Leh). Book train 60 days in advance on IRCTC.
+    </div>
+  </div>
+
+  <!-- ══════════════════════ TRAIN ══════════════════════ -->
+  <div class="section" id="section-train">
+    <h2 class="sec-heading">The Vande Bharat Sleeper</h2>
+    <p class="sec-sub">India's newest semi-high-speed sleeper train — your gateway to Kashmir.</p>
+
+    <div class="train-card">
+      <h3>New Delhi → Srinagar</h3>
+      <p>Vande Bharat Sleeper Express — 800+ km overnight journey</p>
+      <div class="train-meta">
+        <div class="train-meta-item"><div class="lbl">Departs Delhi</div><div class="val">7:00 PM</div></div>
+        <div class="train-meta-item"><div class="lbl">Arrives Srinagar</div><div class="val">8:00 AM (+1 day)</div></div>
+        <div class="train-meta-item"><div class="lbl">Journey time</div><div class="val">~13 hours</div></div>
+        <div class="train-meta-item"><div class="lbl">Days running</div><div class="val">Daily</div></div>
+        <div class="train-meta-item"><div class="lbl">Board at</div><div class="val">New Delhi (NDLS)</div></div>
+      </div>
+      <table class="class-table">
+        <tr>
+          <th>Class</th>
+          <th>Berths</th>
+          <th>Price (per person)</th>
+          <th>Recommended?</th>
+        </tr>
+        <tr>
+          <td>AC 3-Tier (3AC)</td>
+          <td>6 berths / coupe</td>
+          <td>₹2,000</td>
+          <td>✓ Best value</td>
+        </tr>
+        <tr>
+          <td>AC 2-Tier (2AC)</td>
+          <td>4 berths / coupe</td>
+          <td>₹2,500</td>
+          <td>More privacy</td>
+        </tr>
+        <tr>
+          <td>First AC (1AC)</td>
+          <td>2 berths / private cabin</td>
+          <td>₹3,000</td>
+          <td>Full privacy</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:1.5rem; margin-bottom:1.5rem;">
+      <h3 style="font-size:1rem; font-weight:500; margin-bottom:1rem;">Key Stops on the Route</h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:0.75rem;">
+        <div style="font-size:0.82rem; background:var(--snow); border-radius:8px; padding:0.75rem; text-align:center;">
+          <div style="font-weight:500; color:var(--ink)">New Delhi</div>
+          <div style="color:var(--muted); font-size:0.72rem">7:00 PM • Depart</div>
+        </div>
+        <div style="font-size:0.82rem; background:var(--snow); border-radius:8px; padding:0.75rem; text-align:center;">
+          <div style="font-weight:500; color:var(--ink)">Ambala Cantt</div>
+          <div style="color:var(--muted); font-size:0.72rem">~9:30 PM</div>
+        </div>
+        <div style="font-size:0.82rem; background:var(--snow); border-radius:8px; padding:0.75rem; text-align:center;">
+          <div style="font-weight:500; color:var(--ink)">Ludhiana Jn</div>
+          <div style="color:var(--muted); font-size:0.72rem">~11:00 PM</div>
+        </div>
+        <div style="font-size:0.82rem; background:var(--snow); border-radius:8px; padding:0.75rem; text-align:center;">
+          <div style="font-weight:500; color:var(--ink)">Jammu Tawi</div>
+          <div style="color:var(--muted); font-size:0.72rem">~2:30 AM</div>
+        </div>
+        <div style="font-size:0.82rem; background:var(--snow); border-radius:8px; padding:0.75rem; text-align:center;">
+          <div style="font-weight:500; color:var(--ink)">Banihal</div>
+          <div style="color:var(--muted); font-size:0.72rem">~6:30 AM</div>
+        </div>
+        <div style="font-size:0.82rem; background:var(--saffron-light); border-radius:8px; padding:0.75rem; text-align:center; border:1px solid rgba(196,98,26,0.2);">
+          <div style="font-weight:500; color:var(--saffron)">Srinagar</div>
+          <div style="color:var(--saffron); font-size:0.72rem; opacity:0.7">8:00 AM • Arrive</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--card); border:1px solid var(--line); border-radius:14px; padding:1.5rem; margin-bottom:1.5rem;">
+      <h3 style="font-size:1rem; font-weight:500; margin-bottom:0.75rem;">Amenities onboard</h3>
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+        <span style="background:var(--snow); border:1px solid var(--line); border-radius:20px; padding:4px 12px; font-size:0.78rem; color:var(--ink2)">Wi-Fi</span>
+        <span style="background:var(--snow); border:1px solid var(--line); border-radius:20px; padding:4px 12px; font-size:0.78rem; color:var(--ink2)">Individual reading lights</span>
+        <span style="background:var(--snow); border:1px solid var(--line); border-radius:20px; padding:4px 12px; font-size:0.78rem; color:var(--ink2)">Charging ports</span>
+        <span style="background:var(--snow); border:1px solid var(--line); border-radius:20px; padding:4px 12px; font-size:0.78rem; color:var(--ink2)">Privacy curtains</span>
+        <span style="background:var(--snow); border:1px solid var(--line); border-radius:20px; padding:4px 12px; font-size:0.78rem; color:var(--ink2)">Climate control</span>
+        <span style="background:var(--snow); border:1px solid var(--line); border-radius:20px; padding:4px 12px; font-size:0.78rem; color:var(--ink2)">Soft linen</span>
+        <span style="background:var(--snow); border:1px solid var(--line); border-radius:20px; padding:4px 12px; font-size:0.78rem; color:var(--ink2)">Pantry car & meals</span>
+        <span style="background:var(--snow); border:1px solid var(--line); border-radius:20px; padding:4px 12px; font-size:0.78rem; color:var(--ink2)">Kavach safety tech</span>
+        <span style="background:var(--snow); border:1px solid var(--line); border-radius:20px; padding:4px 12px; font-size:0.78rem; color:var(--ink2)">GPS information screens</span>
+      </div>
+    </div>
+
+    <div style="background:var(--teal-light); border:1px solid rgba(15,110,86,0.2); border-radius:12px; padding:1rem 1.25rem; font-size:0.85rem; color:var(--teal);">
+      <strong>Pro tip:</strong> Book on IRCTC at least 60 days ahead. For 3 people, book a full coupe in 1AC (2 berths) + single berth, or all in 2AC for extra comfort. Tatkal opens 1 day before at 10 AM (AC) / 11 AM (non-AC).
+    </div>
+  </div>
+
+  <!-- ══════════════════════ ITINERARY ══════════════════════ -->
+  <div class="section" id="section-itinerary">
+    <h2 class="sec-heading">Day-by-Day Itinerary</h2>
+    <p class="sec-sub">Click any day to expand the full schedule. All travel by your private Innova Crysta + driver.</p>
+
+    <div class="day-grid">
+
+      <!-- DAY 0 -->
+      <div class="day-card" onclick="toggleDay(this)">
+        <div class="day-header">
+          <div class="day-num" style="background:#1a1814; color:#d4a56a;">0</div>
+          <div class="day-title">
+            <h3>Night Train — New Delhi to Srinagar</h3>
+            <p>Departure evening · Overnight journey · Arrives next morning</p>
+          </div>
+          <div class="day-toggle">▾</div>
+        </div>
+        <div class="day-body">
+          <ul class="timeline tl-morning">
+            <li>
+              <div class="tl-time">3:00 PM</div>
+              <div class="tl-title">Reach New Delhi Railway Station</div>
+              <div class="tl-desc">Head to New Delhi (NDLS) station by 5 PM. Platform 1–5 typically for Vande Bharat trains. Grab dinner at one of the station restaurants or Karim's nearby.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-afternoon">
+            <li>
+              <div class="tl-time">7:00 PM</div>
+              <div class="tl-title">Board Vande Bharat Sleeper</div>
+              <div class="tl-desc">Train departs sharp. Find your berths, settle in. The train passes through Haryana, Punjab plains — watch the city lights fade as you roll north.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-evening">
+            <li>
+              <div class="tl-time">Overnight</div>
+              <div class="tl-title">Sleep through the Shivaliks</div>
+              <div class="tl-desc">Around 2:30 AM you pass Jammu Tawi. The train enters the dramatic Udhampur-Srinagar-Baramulla rail link with tunnels through the Himalayas. Sleep well — big day ahead.</div>
+            </li>
+          </ul>
+          <div class="day-meals" style="margin-top:1rem;">
+            <span class="meal-pill">🍽 Dinner on train</span>
+            <span class="stay-pill">🚆 Overnight train</span>
+            <span class="dist-pill">800+ km</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 1 -->
+      <div class="day-card" onclick="toggleDay(this)">
+        <div class="day-header">
+          <div class="day-num" style="background:var(--teal); color:white;">1</div>
+          <div class="day-title">
+            <h3>Srinagar — Dal Lake & the Old City</h3>
+            <p>Arrive 8 AM · Shikara rides · Mughal Gardens · Houseboat night</p>
+          </div>
+          <div class="day-toggle">▾</div>
+        </div>
+        <div class="day-body">
+          <ul class="timeline tl-morning">
+            <li>
+              <div class="tl-time">8:00 AM</div>
+              <div class="tl-title">Arrive Srinagar Station</div>
+              <div class="tl-desc">Your rich friend's driver meets you at the station with the Innova Crysta. Freshen up, check into houseboat on Dal Lake. These floating palaces are a Srinagar icon — cedar-panelled, with plush carpets and a personal cook.</div>
+            </li>
+            <li>
+              <div class="tl-time">10:00 AM</div>
+              <div class="tl-title">Shikara Ride on Dal Lake</div>
+              <div class="tl-desc">Board a traditional Shikara and glide through the 26 sq km lake. Pass floating vegetable gardens, lotus beds, and floating markets. Watch fishermen cast nets in the morning mist. About 2 hours. Cost: ₹600–800 for the whole boat.</div>
+            </li>
+            <li>
+              <div class="tl-time">12:30 PM</div>
+              <div class="tl-title">Lunch at Mughal Darbar</div>
+              <div class="tl-desc">One of Srinagar's legendary Wazwan restaurants. Must-try: Rogan Josh, Yakhni, Gushtaba, Haak Saag. Lunch for 3: ₹1,800–2,500.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-afternoon">
+            <li>
+              <div class="tl-time">2:00 PM</div>
+              <div class="tl-title">Shalimar Bagh — Mughal Garden</div>
+              <div class="tl-desc">Built by Emperor Jahangir for Noor Jahan in 1619, these terraced Mughal gardens rise toward the hills with cascading fountains and chinar trees. Entry: ₹24/person.</div>
+            </li>
+            <li>
+              <div class="tl-time">3:30 PM</div>
+              <div class="tl-title">Nishat Bagh (Garden of Bliss)</div>
+              <div class="tl-desc">Largest Mughal garden in Kashmir, designed in 1633. Twelve terraces represent 12 zodiac signs. Stunning Dal Lake backdrop. Entry: ₹24/person.</div>
+            </li>
+            <li>
+              <div class="tl-time">5:00 PM</div>
+              <div class="tl-title">Hazratbal Shrine</div>
+              <div class="tl-desc">The white marble domed mosque on Dal Lake's north shore is one of Kashmir's most revered shrines. Dress respectfully. Free entry. Mesmerising at dusk with the lake reflections.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-evening">
+            <li>
+              <div class="tl-time">7:00 PM</div>
+              <div class="tl-title">Sunset on Dal Lake + Evening Shikara</div>
+              <div class="tl-desc">Back to the houseboat. Order Kahwa (saffron-cardamom tea) on the deck and watch the Zabarwan mountains turn pink and purple. The reflections of houseboats on the still lake at dusk are otherworldly.</div>
+            </li>
+            <li>
+              <div class="tl-time">8:30 PM</div>
+              <div class="tl-title">Dinner on the Houseboat</div>
+              <div class="tl-desc">Your houseboat cook prepares a Wazwan feast: Tabak Maaz (fried ribs), Seekh Kebabs, Dum Aloo, and Phirni for dessert. Usually included in houseboat tariff.</div>
+            </li>
+          </ul>
+          <div class="day-meals">
+            <span class="meal-pill">☕ Kahwa + Sheermal breakfast</span>
+            <span class="meal-pill">🍖 Wazwan lunch</span>
+            <span class="meal-pill">🍛 Houseboat dinner</span>
+            <span class="stay-pill">🛶 Luxury Houseboat on Dal Lake</span>
+            <span class="dist-pill">~0 km driving</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day-card" onclick="toggleDay(this)">
+        <div class="day-header">
+          <div class="day-num" style="background:var(--saffron); color:white;">2</div>
+          <div class="day-title">
+            <h3>Gulmarg — The Meadow of Flowers</h3>
+            <p>56 km from Srinagar · World's highest gondola · Snow even in summer</p>
+          </div>
+          <div class="day-toggle">▾</div>
+        </div>
+        <div class="day-body">
+          <ul class="timeline tl-morning">
+            <li>
+              <div class="tl-time">7:00 AM</div>
+              <div class="tl-title">Early departure to Gulmarg</div>
+              <div class="tl-desc">Drive 56 km (1.5 hrs) through apple and walnut orchards. The road winds through Tangmarg before the final ascent to Gulmarg at 2,650 m. Driver arranges roadside chai.</div>
+            </li>
+            <li>
+              <div class="tl-time">9:00 AM</div>
+              <div class="tl-title">Gulmarg Gondola — Phase 1 & 2</div>
+              <div class="tl-desc">The world's highest operating cable car (3,980 m at Phase 2 Apharwat peak). Phase 1 to Kongdori: ₹740/person. Phase 2 to Apharwat: ₹1,550/person. Up top: 360° Himalayan panorama, snow in July, and a little tea shack at 13,000 ft!</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-afternoon">
+            <li>
+              <div class="tl-time">12:30 PM</div>
+              <div class="tl-title">Horse riding on the meadow</div>
+              <div class="tl-desc">Gulmarg's vast flat meadow (bowl) is perfect for horse rides. Local ponies circle the meadow past wildflowers and snow patches. Rate: ₹400–600 per person per hour. Bargain confidently.</div>
+            </li>
+            <li>
+              <div class="tl-time">2:00 PM</div>
+              <div class="tl-title">Lunch at Highlands Park or Hotel Affarwat</div>
+              <div class="tl-desc">Try the Kashmiri Trout — caught fresh from mountain streams, cooked in a mustard-based gravy. With bread, chai, and dessert for 3: ₹1,500–2,000.</div>
+            </li>
+            <li>
+              <div class="tl-time">3:30 PM</div>
+              <div class="tl-title">St. Mary's Church & Golf Course</div>
+              <div class="tl-desc">The 1895 British-era stone church sits in a meadow below the slopes. Right next to it is the world's highest green golf course — bring a club for a novelty round (rentals available, ₹800).</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-evening">
+            <li>
+              <div class="tl-time">5:30 PM</div>
+              <div class="tl-title">Drive back to Srinagar</div>
+              <div class="tl-desc">Return via Tangmarg. Stop at a local farm for fresh apples and walnuts. Back in Srinagar by 7:30 PM.</div>
+            </li>
+            <li>
+              <div class="tl-time">8:00 PM</div>
+              <div class="tl-title">Dinner at Ahdoos Hotel</div>
+              <div class="tl-desc">Srinagar's most famous restaurant since 1918. Famous for their Seekh Kebabs and Kashmiri Dum Aloo. Evening at Lal Chowk market for Pashmina shopping. Budget: ₹500–800/person for dinner.</div>
+            </li>
+          </ul>
+          <div class="day-meals">
+            <span class="meal-pill">🧇 Houseboat breakfast</span>
+            <span class="meal-pill">🐟 Kashmiri Trout lunch</span>
+            <span class="meal-pill">🍖 Kebabs at Ahdoos</span>
+            <span class="stay-pill">🛶 Houseboat on Dal Lake (2nd night)</span>
+            <span class="dist-pill">~112 km round trip</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="day-card" onclick="toggleDay(this)">
+        <div class="day-header">
+          <div class="day-num" style="background:var(--indigo); color:white;">3</div>
+          <div class="day-title">
+            <h3>Sonamarg → Zoji La → Kargil</h3>
+            <p>Srinagar to Kargil: 205 km · Cross the mighty Zoji La Pass</p>
+          </div>
+          <div class="day-toggle">▾</div>
+        </div>
+        <div class="day-body">
+          <ul class="timeline tl-morning">
+            <li>
+              <div class="tl-time">6:30 AM</div>
+              <div class="tl-title">Checkout & depart Srinagar</div>
+              <div class="tl-desc">Early start is crucial — Zoji La can get traffic. Pack a snack bag. Your driver loads the Innova and you leave the houseboat behind. The road follows the Sindh River northeast.</div>
+            </li>
+            <li>
+              <div class="tl-time">9:00 AM</div>
+              <div class="tl-title">Sonamarg — Meadow of Gold</div>
+              <div class="tl-desc">At 2,730 m, Sonamarg is one of Kashmir's crown jewels. The wide green valley flanked by snow peaks is staggering. Take a pony ride to Thajiwas Glacier (mandatory — SUVs can't go beyond the base). Cost: ₹600–800/person for pony + guide. Spend 2 hours here.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-afternoon">
+            <li>
+              <div class="tl-time">11:30 AM</div>
+              <div class="tl-title">Crossing Zoji La Pass (3,528 m)</div>
+              <div class="tl-desc">The 'gateway to Ladakh'. Zoji La literally means "mountain pass of blizzards". The road becomes narrow, rocky, and dramatic — a vertiginous 11 km climb. Keep your eyes open and your phone charged for photos. Your driver has crossed this hundreds of times.</div>
+            </li>
+            <li>
+              <div class="tl-time">12:30 PM</div>
+              <div class="tl-title">Drass — World's 2nd Coldest Inhabited Place</div>
+              <div class="tl-desc">Lunch stop at Drass. At 3,280 m, Drass sees -60°C in winter! The summer day feels merely brisk. Have daal, rice, and chapati at a dhaba. Cost: ₹150–200/person.</div>
+            </li>
+            <li>
+              <div class="tl-time">2:30 PM</div>
+              <div class="tl-title">Kargil War Memorial</div>
+              <div class="tl-desc">An emotional visit. The 1999 Kargil War saw fierce fighting on these peaks between India and Pakistan. The memorial honours the 527 Indian soldiers who fell. The sound-and-light show (evenings) is deeply moving. Free entry.</div>
+            </li>
+            <li>
+              <div class="tl-time">4:00 PM</div>
+              <div class="tl-title">Tiger Hill viewpoint</div>
+              <div class="tl-desc">Tactical hill from the 1999 war. The views of snow-capped peaks stretching to the horizon are extraordinary.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-evening">
+            <li>
+              <div class="tl-time">6:00 PM</div>
+              <div class="tl-title">Arrive Kargil & Check In</div>
+              <div class="tl-desc">Kargil city straddles the Suru River surrounded by bare brown mountains. Check into Hotel Siachen or Hotel Greenland (₹2,500–4,000/night for a double). The town has a unique Shia Muslim culture — visit the bazaar for local apricots and butter tea.</div>
+            </li>
+            <li>
+              <div class="tl-time">8:00 PM</div>
+              <div class="tl-title">Dinner & Kargil Night Market</div>
+              <div class="tl-desc">Try Ladakhi Thukpa (noodle soup) or Skyu (thick pasta with root vegetables). Very hearty for cold mountain nights.</div>
+            </li>
+          </ul>
+          <div class="day-meals">
+            <span class="meal-pill">☕ Houseboat breakfast</span>
+            <span class="meal-pill">🍲 Dhaba lunch in Drass</span>
+            <span class="meal-pill">🍜 Thukpa dinner in Kargil</span>
+            <span class="stay-pill">🏨 Hotel in Kargil</span>
+            <span class="dist-pill">~205 km</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="day-card" onclick="toggleDay(this)">
+        <div class="day-header">
+          <div class="day-num" style="background:var(--gold); color:white;">4</div>
+          <div class="day-title">
+            <h3>Kargil → Lamayuru → Leh</h3>
+            <p>230 km · Moonland Monastery · Magnetic Hill · Leh arrival</p>
+          </div>
+          <div class="day-toggle">▾</div>
+        </div>
+        <div class="day-body">
+          <ul class="timeline tl-morning">
+            <li>
+              <div class="tl-time">7:00 AM</div>
+              <div class="tl-title">Departure from Kargil</div>
+              <div class="tl-desc">Long day of driving — 230 km on winding mountain roads takes 7–8 hours with stops. Pack breakfast from the hotel. The landscape transforms dramatically as you leave the lush Suru Valley.</div>
+            </li>
+            <li>
+              <div class="tl-time">9:00 AM</div>
+              <div class="tl-title">Mulbekh Monastery & Giant Buddha</div>
+              <div class="tl-desc">A 9-metre carved Buddha (circa 8th century AD) is chiselled directly into a rock face beside the road — one of Ladakh's oldest Buddhist monuments. 15-minute stop.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-afternoon">
+            <li>
+              <div class="tl-time">10:30 AM</div>
+              <div class="tl-title">Lamayuru Monastery — Moonland</div>
+              <div class="tl-desc">Ladakh's oldest and largest monastery perches above a surreal eroded landscape that looks lunar — hence "Moonland". Founded in the 10th century, it houses over 150 monks and priceless thangka paintings. Explore for 1–1.5 hours. Entry: ₹50/person.</div>
+            </li>
+            <li>
+              <div class="tl-time">12:30 PM</div>
+              <div class="tl-title">Lunch at Alchi or roadside dhaba</div>
+              <div class="tl-desc">The road passes Alchi village with its 1,000-year-old murals. Lunch at a local dhaba: Ladakhi red rice with lentils and pickled vegetables. ₹200–300/person.</div>
+            </li>
+            <li>
+              <div class="tl-time">2:30 PM</div>
+              <div class="tl-title">Confluence of Indus & Zanskar Rivers</div>
+              <div class="tl-desc">One of Ladakh's most photographed spots. The turquoise Zanskar meets the darker Indus in a dramatic confluence visible from a viewpoint above. The distinct colour difference of the two rivers is striking. Free, 20 minutes.</div>
+            </li>
+            <li>
+              <div class="tl-time">3:30 PM</div>
+              <div class="tl-title">Magnetic Hill</div>
+              <div class="tl-desc">An optical illusion where vehicles appear to roll uphill on their own. Put your SUV in neutral at the marked spot and watch! The explanation is a trick of perspective in the surrounding terrain — fun regardless. Free.</div>
+            </li>
+            <li>
+              <div class="tl-time">4:00 PM</div>
+              <div class="tl-title">Gurudwara Pathar Sahib</div>
+              <div class="tl-desc">Built in 1517 and maintained by the Indian Army, this Sikh shrine sits beside the NH1. Accept langar (free community meal) from the soldiers — a moving experience of faith and military brotherhood.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-evening">
+            <li>
+              <div class="tl-time">5:30 PM</div>
+              <div class="tl-title">Hall of Fame Museum</div>
+              <div class="tl-desc">Built by the Indian Army to honour martyrs of the Siachen and Kargil conflicts. Weapons, uniforms, documents. Very moving. Entry: ₹50/person. 45 minutes.</div>
+            </li>
+            <li>
+              <div class="tl-time">7:00 PM</div>
+              <div class="tl-title">Arrive Leh & Check In</div>
+              <div class="tl-desc">Check into The Grand Dragon Ladakh or Jigmet Guest House. REST is critical tonight — acclimatize to 3,500 m altitude. No alcohol. Drink lots of water. Slow down.</div>
+            </li>
+          </ul>
+          <div class="day-meals">
+            <span class="meal-pill">🧇 Hotel breakfast</span>
+            <span class="meal-pill">🍚 Ladakhi dhaba lunch</span>
+            <span class="meal-pill">🫕 Army langar + hotel dinner</span>
+            <span class="stay-pill">🏨 Hotel in Leh (rest & acclimatize)</span>
+            <span class="dist-pill">~230 km</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 5 -->
+      <div class="day-card" onclick="toggleDay(this)">
+        <div class="day-header">
+          <div class="day-num" style="background:var(--saffron); color:white;">5</div>
+          <div class="day-title">
+            <h3>Leh City Exploration + Permits</h3>
+            <p>Leh Palace · Shanti Stupa · Leh Market · Get Inner Line Permits</p>
+          </div>
+          <div class="day-toggle">▾</div>
+        </div>
+        <div class="day-body">
+          <div style="background:var(--gold-light); border-radius:8px; padding:0.85rem; margin-bottom:1rem; font-size:0.83rem; color:var(--gold);">
+            <strong>⚠️ Acclimatization day!</strong> Move slowly, drink 4+ litres of water, avoid alcohol. Altitude sickness (AMS) can ruin the trip. Signs: headache, nausea, dizziness. Rest if symptoms appear.
+          </div>
+          <ul class="timeline tl-morning">
+            <li>
+              <div class="tl-time">8:00 AM</div>
+              <div class="tl-title">Inner Line Permits at DC Office</div>
+              <div class="tl-desc">Essential first task. The DC Office near the main bazaar issues ILPs for Nubra Valley, Pangong Tso, and Hanle. Bring 3 passport photos and ID copies each. Apply early (opens 9 AM) to avoid queues. Online option also available. Cost: ₹200–400/person per permit area. Takes 1–2 hours.</div>
+            </li>
+            <li>
+              <div class="tl-time">10:30 AM</div>
+              <div class="tl-title">Leh Palace (Lhachen Palkhar)</div>
+              <div class="tl-desc">Built in the 1600s by King Sengge Namgyal, this 9-storey palace dominates the hilltop. It predates the Potala Palace in Lhasa! The views over Leh city, the Indus Valley, and the Stok Kangri range are breathtaking. Entry: ₹100/person. 1.5 hours.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-afternoon">
+            <li>
+              <div class="tl-time">12:30 PM</div>
+              <div class="tl-title">Lunch at Bon Appetit or The Tibetan Kitchen</div>
+              <div class="tl-desc">Leh has surprisingly cosmopolitan cafés. Try Tibetan Momos (dumplings) with chilli sauce, Thukpa noodle soup, or yak cheese pizza at the expat favourites. Budget: ₹400–600/person.</div>
+            </li>
+            <li>
+              <div class="tl-time">2:00 PM</div>
+              <div class="tl-title">Namgyal Tsemo Gompa</div>
+              <div class="tl-desc">The monastery at the very top of the Namgyal Tsemo ridge above Leh Palace. Houses a giant Maitreya Buddha statue. A gentle hike up. Entry: ₹30.</div>
+            </li>
+            <li>
+              <div class="tl-time">3:30 PM</div>
+              <div class="tl-title">Leh Main Bazaar + Shopping</div>
+              <div class="tl-desc">The labyrinthine bazaar sells Pashmina shawls, Thangka paintings, turquoise jewellery, dried apricots, sea buckthorn juice, and prayer wheels. Budget ₹2,000–5,000 per person for souvenirs.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-evening">
+            <li>
+              <div class="tl-time">5:00 PM</div>
+              <div class="tl-title">Shanti Stupa — Sunset Ceremony</div>
+              <div class="tl-desc">The gleaming white Japanese-built stupa crowns a hilltop southwest of Leh at 3,694 m. 500 steps up or drive. The Dalai Lama consecrated it in 1985. Sunset here — with the stupa glowing and the mountains behind — is among Ladakh's finest moments. Free entry.</div>
+            </li>
+            <li>
+              <div class="tl-time">7:30 PM</div>
+              <div class="tl-title">Dinner at Gesmo Restaurant</div>
+              <div class="tl-desc">A Leh institution. Order the Yak Steak (if you eat red meat), Skyu pasta stew, and Chang (local barley beer — just one, easy on the altitude!). Budget: ₹500–800/person.</div>
+            </li>
+          </ul>
+          <div class="day-meals">
+            <span class="meal-pill">☕ Hotel breakfast</span>
+            <span class="meal-pill">🥟 Momos & Thukpa lunch</span>
+            <span class="meal-pill">🥩 Gesmo dinner</span>
+            <span class="stay-pill">🏨 Hotel in Leh (2nd night)</span>
+            <span class="dist-pill">~10 km city driving</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 6 -->
+      <div class="day-card" onclick="toggleDay(this)">
+        <div class="day-header">
+          <div class="day-num" style="background:var(--teal); color:white;">6</div>
+          <div class="day-title">
+            <h3>Khardung La → Nubra Valley</h3>
+            <p>World's highest motorable road · Bactrian camels · Hunder dunes</p>
+          </div>
+          <div class="day-toggle">▾</div>
+        </div>
+        <div class="day-body">
+          <ul class="timeline tl-morning">
+            <li>
+              <div class="tl-time">6:00 AM</div>
+              <div class="tl-title">Early start — crucial for Khardung La</div>
+              <div class="tl-desc">Khardung La can close due to military convoys or weather. Leave Leh by 7 AM. It's 39 km to the pass — the road winds sharply up through multiple hairpin bends. Dress very warmly — it's well below freezing up top even in August.</div>
+            </li>
+            <li>
+              <div class="tl-time">8:30 AM</div>
+              <div class="tl-title">Khardung La Pass — 18,380 ft (5,602 m)</div>
+              <div class="tl-desc">The BRO (Border Roads Organisation) declared this the world's highest motorable road. At the top: a small tea stall run by the Indian Army (welcome cup of chai), giant signboards, prayer flags snapping in the icy wind, and views of the Saser Massif and Zanskar Range simultaneously. Spend 20–30 min max — altitude!</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-afternoon">
+            <li>
+              <div class="tl-time">10:30 AM</div>
+              <div class="tl-title">Descend into Nubra Valley</div>
+              <div class="tl-desc">The descent from 5,600 m into the Nubra Valley (3,048 m) is jaw-dropping. The valley floor is lush and green — a hidden garden between brown Himalayan ridges. The Shyok and Nubra rivers converge here.</div>
+            </li>
+            <li>
+              <div class="tl-time">12:00 PM</div>
+              <div class="tl-title">Diskit Monastery — 500 years old</div>
+              <div class="tl-desc">The oldest and largest monastery in Nubra, perched on a rocky spur above the valley. The 32-metre Maitreya (Future Buddha) statue looks out protectively over the valley. The views from the monastery roof are spectacular. Entry: ₹50.</div>
+            </li>
+            <li>
+              <div class="tl-time">2:00 PM</div>
+              <div class="tl-title">Lunch in Diskit + Check-in at Sand Dune Camp</div>
+              <div class="tl-desc">Check into a luxury camp or guesthouse at Hunder — canvas tents with proper beds, solar-powered warm water. Budget: ₹3,500–6,000/tent per night.</div>
+            </li>
+            <li>
+              <div class="tl-time">4:00 PM</div>
+              <div class="tl-title">Bactrian Camel Safari — Hunder Sand Dunes</div>
+              <div class="tl-desc">A bizarre and magnificent sight: sand dunes in a high-altitude Himalayan valley, with double-humped Bactrian camels (descendants of the ancient Silk Road trade caravans). A 30-minute ride through the dunes is surreal. Cost: ₹400–600/person. The dunes glow amber at sunset.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-evening">
+            <li>
+              <div class="tl-time">6:30 PM</div>
+              <div class="tl-title">Sunset at Hunder Sand Dunes</div>
+              <div class="tl-desc">Nubra has the clearest skies on earth. As the sun sets behind the peaks, the valley turns golden. Sit on the dunes and watch. Bring a jacket — temperature drops fast.</div>
+            </li>
+            <li>
+              <div class="tl-time">8:00 PM</div>
+              <div class="tl-title">Bonfire & Stargazing</div>
+              <div class="tl-desc">Camp bonfires with local folk music, butter tea, and an absolutely staggering starscape overhead. No light pollution. The Milky Way is visible to the naked eye.</div>
+            </li>
+          </ul>
+          <div class="day-meals">
+            <span class="meal-pill">☕ Hotel breakfast</span>
+            <span class="meal-pill">🍲 Dhaba lunch in Diskit</span>
+            <span class="meal-pill">🍗 Camp dinner (included)</span>
+            <span class="stay-pill">⛺ Luxury desert camp, Hunder</span>
+            <span class="dist-pill">~125 km from Leh</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 7 -->
+      <div class="day-card" onclick="toggleDay(this)">
+        <div class="day-header">
+          <div class="day-num" style="background:var(--indigo); color:white;">7</div>
+          <div class="day-title">
+            <h3>Nubra → Pangong Tso → Fly Home</h3>
+            <p>The 3 Idiots lake at 14,270 ft · Blue-to-turquoise-to-green magic</p>
+          </div>
+          <div class="day-toggle">▾</div>
+        </div>
+        <div class="day-body">
+          <div style="background:var(--indigo-light); border-radius:8px; padding:0.85rem; margin-bottom:1rem; font-size:0.83rem; color:var(--indigo);">
+            <strong>Note:</strong> Nubra to Pangong via Shyok Valley is 5–6 hours (140 km). This route through the Shyok River valley is dramatically scenic but rough. Leave by 7 AM for a 1 PM arrival. Then catch a late afternoon/evening flight from Leh.
+          </div>
+          <ul class="timeline tl-morning">
+            <li>
+              <div class="tl-time">5:30 AM</div>
+              <div class="tl-title">Dawn at the dunes</div>
+              <div class="tl-desc">Wake up to sunrise over the Karakoram Range from your tent. The light hits the peaks at 6 AM. Worth setting an alarm for.</div>
+            </li>
+            <li>
+              <div class="tl-time">7:00 AM</div>
+              <div class="tl-title">Depart Nubra via Shyok Valley</div>
+              <div class="tl-desc">The route follows the Shyok River — a dirt track in places, with dramatic river crossings and canyon walls. Your driver navigates this expertly. Stop at Khalsar junction for chai.</div>
+            </li>
+            <li>
+              <div class="tl-time">10:00 AM</div>
+              <div class="tl-title">Durbuk village</div>
+              <div class="tl-desc">Half-way lunch stop. The road climbs out of the Shyok Valley. Durbuk has a small market and a military check post where ILPs are verified. Grab local apricot jam bread here.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-afternoon">
+            <li>
+              <div class="tl-time">12:30 PM</div>
+              <div class="tl-title">Pangong Tso — First Glimpse</div>
+              <div class="tl-desc">Nothing prepares you for it. You crest a ridge, and there it is: 134 km of shimmering lake at 4,350 m, stretching into Tibet (60% of the lake is in China). The water changes colour as you watch — cobalt, teal, sapphire, turquoise. Immortalised as the final scene of 3 Idiots.</div>
+            </li>
+            <li>
+              <div class="tl-time">1:30 PM</div>
+              <div class="tl-title">Lunch on the lakeshore</div>
+              <div class="tl-desc">Dozens of small restaurants and camps line the shore. Order Thukpa, Maggi (oddly perfect here), and yak butter tea while your feet dangle over the impossibly blue water. Budget: ₹300–400/person.</div>
+            </li>
+            <li>
+              <div class="tl-time">3:00 PM</div>
+              <div class="tl-title">Explore the shoreline & 3 Idiots spot</div>
+              <div class="tl-desc">Walk along the shore, skip stones, photograph the Himalayan peaks reflected in the lake. Visit the famous 3 Idiots movie location marked with a small sign. Rent bicycles or horses for ₹400–500 for a lakeside ride.</div>
+            </li>
+          </ul>
+          <ul class="timeline tl-evening">
+            <li>
+              <div class="tl-time">4:30 PM</div>
+              <div class="tl-title">Drive back to Leh (via Chang La)</div>
+              <div class="tl-desc">150 km via Chang La Pass (5,360 m) — the 3rd highest motorable road in the world. Stop at the top for photos with the prayer flags. Reach Leh by 7:30–8 PM.</div>
+            </li>
+            <li>
+              <div class="tl-time">8:30 PM</div>
+              <div class="tl-title">Final dinner in Leh</div>
+              <div class="tl-desc">Last meal together at Lehchen Restaurant or ALCHI Kitchen. Order everything you haven't tried yet. Share stories, look at photos, celebrate an incredible 7 days.</div>
+            </li>
+            <li>
+              <div class="tl-time">Next Morning</div>
+              <div class="tl-title">Fly home from Leh Airport</div>
+              <div class="tl-desc">Leh's airport (Kushok Bakula Rimpochee) is served by IndiGo, SpiceJet, Air India, and Vistara. Flights to Delhi (~1.5 hrs): ₹3,500–7,000. Book well in advance. Check out by 7 AM for morning flights.</div>
+            </li>
+          </ul>
+          <div class="day-meals">
+            <span class="meal-pill">🧇 Camp breakfast</span>
+            <span class="meal-pill">🍜 Lakeside Thukpa lunch</span>
+            <span class="meal-pill">🍛 Final Leh dinner</span>
+            <span class="stay-pill">🏨 Hotel Leh (last night)</span>
+            <span class="dist-pill">~290 km total</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════ COSTS ══════════════════════ -->
+  <div class="section" id="section-costs">
+    <h2 class="sec-heading">Cost Breakdown</h2>
+    <p class="sec-sub">Detailed estimates for a group of 3 travellers. Split evenly unless noted.</p>
+
+    <div class="per-person-note">
+      <strong>Group assumption:</strong> 3 people travelling together. Your rich friend covers the <strong>SUV + driver entirely</strong> (₹40,000–55,000 value). All other costs split 3 ways. Budget class = 3AC train, mid-range hotels. Premium estimates add houseboat, gondola, and better hotels.
+    </div>
+
+    <div class="cost-grid">
+      <div class="cost-card">
+        <div class="icon">🚆</div>
+        <div class="label">Train (per person)</div>
+        <div class="amount">₹2,000–3,000</div>
+        <div class="note">3AC to 1AC, New Delhi → Srinagar</div>
+      </div>
+      <div class="cost-card">
+        <div class="icon">🏨</div>
+        <div class="label">Hotels (total trip)</div>
+        <div class="amount">₹20,000–38,000</div>
+        <div class="note">Per person, 7 nights incl. houseboat</div>
+      </div>
+      <div class="cost-card">
+        <div class="icon">🍽</div>
+        <div class="label">Food (total trip)</div>
+        <div class="amount">₹8,000–14,000</div>
+        <div class="note">Per person, 7 days all meals</div>
+      </div>
+      <div class="cost-card">
+        <div class="icon">✈️</div>
+        <div class="label">Return flight (Leh–Delhi)</div>
+        <div class="amount">₹4,000–8,000</div>
+        <div class="note">Per person, book 30+ days ahead</div>
+      </div>
+      <div class="cost-card">
+        <div class="icon">🎟</div>
+        <div class="label">Entry fees + permits</div>
+        <div class="amount">₹3,000–5,000</div>
+        <div class="note">Per person, ILPs, gondola, monuments</div>
+      </div>
+      <div class="cost-card">
+        <div class="icon">🛍</div>
+        <div class="label">Shopping + misc.</div>
+        <div class="amount">₹5,000–15,000</div>
+        <div class="note">Per person, Pashmina, spices, etc.</div>
+      </div>
+    </div>
+
+    <div class="cost-table-wrap">
+      <div class="cost-table-title">Night-by-Night Accommodation</div>
+      <table class="cost-table">
+        <tr>
+          <th>Night</th>
+          <th>Location</th>
+          <th>Accommodation</th>
+          <th class="amt">Cost/Room</th>
+          <th class="amt">Per Person</th>
+        </tr>
+        <tr>
+          <td>Night 0</td>
+          <td>Train (NDLS → Srinagar)</td>
+          <td>Vande Bharat Sleeper berth</td>
+          <td class="amt">—</td>
+          <td class="amt">₹2,000–3,000</td>
+        </tr>
+        <tr>
+          <td>Night 1</td>
+          <td>Dal Lake, Srinagar</td>
+          <td>Luxury Houseboat (3 beds)</td>
+          <td class="amt">₹6,000–12,000</td>
+          <td class="amt">₹2,000–4,000</td>
+        </tr>
+        <tr>
+          <td>Night 2</td>
+          <td>Dal Lake, Srinagar</td>
+          <td>Luxury Houseboat (same)</td>
+          <td class="amt">₹6,000–12,000</td>
+          <td class="amt">₹2,000–4,000</td>
+        </tr>
+        <tr>
+          <td>Night 3</td>
+          <td>Kargil</td>
+          <td>Hotel Siachen / Greenland</td>
+          <td class="amt">₹2,500–5,000</td>
+          <td class="amt">₹800–1,700</td>
+        </tr>
+        <tr>
+          <td>Night 4</td>
+          <td>Leh</td>
+          <td>Grand Dragon / The Zen Ladakh</td>
+          <td class="amt">₹4,000–9,000</td>
+          <td class="amt">₹1,300–3,000</td>
+        </tr>
+        <tr>
+          <td>Night 5</td>
+          <td>Leh</td>
+          <td>Same hotel (2nd night)</td>
+          <td class="amt">₹4,000–9,000</td>
+          <td class="amt">₹1,300–3,000</td>
+        </tr>
+        <tr>
+          <td>Night 6</td>
+          <td>Hunder, Nubra Valley</td>
+          <td>Desert Himalaya Camp</td>
+          <td class="amt">₹3,500–7,000</td>
+          <td class="amt">₹1,200–2,300</td>
+        </tr>
+        <tr>
+          <td>Night 7</td>
+          <td>Leh (before flight)</td>
+          <td>Guest house or hotel</td>
+          <td class="amt">₹2,000–5,000</td>
+          <td class="amt">₹700–1,700</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="4">Total Accommodation (per person)</td>
+          <td class="amt">₹11,300–21,700</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="cost-table-wrap">
+      <div class="cost-table-title">Activities & Experiences (per person)</div>
+      <table class="cost-table">
+        <tr>
+          <th>Activity</th>
+          <th>Location</th>
+          <th class="amt">Cost</th>
+        </tr>
+        <tr><td>Shikara ride (shared boat)</td><td>Dal Lake</td><td class="amt">₹250–300</td></tr>
+        <tr><td>Gulmarg Gondola Phase 1</td><td>Gulmarg</td><td class="amt">₹740</td></tr>
+        <tr><td>Gulmarg Gondola Phase 2</td><td>Apharwat Peak</td><td class="amt">₹1,550</td></tr>
+        <tr><td>Horse riding (meadow)</td><td>Gulmarg</td><td class="amt">₹400–600</td></tr>
+        <tr><td>Pony to Thajiwas Glacier</td><td>Sonamarg</td><td class="amt">₹600–800</td></tr>
+        <tr><td>Lamayuru monastery entry</td><td>Lamayuru</td><td class="amt">₹50</td></tr>
+        <tr><td>Leh Palace entry</td><td>Leh</td><td class="amt">₹100</td></tr>
+        <tr><td>Hall of Fame</td><td>Leh</td><td class="amt">₹50</td></tr>
+        <tr><td>Inner Line Permits (Nubra + Pangong)</td><td>DC Office Leh</td><td class="amt">₹400</td></tr>
+        <tr><td>Ladakh Environment Fee</td><td>Check post</td><td class="amt">₹400</td></tr>
+        <tr><td>Bactrian Camel Safari</td><td>Hunder, Nubra</td><td class="amt">₹400–600</td></tr>
+        <tr><td>Misc. (rafting opt., bikes, etc.)</td><td>Various</td><td class="amt">₹1,000–2,000</td></tr>
+        <tr class="total-row">
+          <td colspan="2">Total Activities (per person)</td>
+          <td class="amt">₹5,940–7,590</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="cost-table-wrap">
+      <div class="cost-table-title">Grand Total — Per Person Summary</div>
+      <table class="cost-table">
+        <tr>
+          <th>Category</th>
+          <th class="amt">Budget</th>
+          <th class="amt">Mid-Range</th>
+          <th class="amt">Premium</th>
+        </tr>
+        <tr><td>Train (Delhi → Srinagar)</td><td class="amt">₹2,000</td><td class="amt">₹2,500</td><td class="amt">₹3,000</td></tr>
+        <tr><td>Return flight (Leh → Delhi)</td><td class="amt">₹4,000</td><td class="amt">₹5,500</td><td class="amt">₹8,000</td></tr>
+        <tr><td>Accommodation (7 nights)</td><td class="amt">₹11,300</td><td class="amt">₹16,000</td><td class="amt">₹21,700</td></tr>
+        <tr><td>Food (all meals, 8 days)</td><td class="amt">₹7,000</td><td class="amt">₹10,000</td><td class="amt">₹14,000</td></tr>
+        <tr><td>Activities & permits</td><td class="amt">₹5,940</td><td class="amt">₹6,500</td><td class="amt">₹7,590</td></tr>
+        <tr><td>Shopping & souvenirs</td><td class="amt">₹3,000</td><td class="amt">₹6,000</td><td class="amt">₹12,000</td></tr>
+        <tr><td>Emergency buffer (10%)</td><td class="amt">₹3,320</td><td class="amt">₹4,650</td><td class="amt">₹6,629</td></tr>
+        <tr><td style="color:var(--teal); font-size:0.8rem; font-style:italic;">SUV + driver (friend's treat! 🎉)</td><td style="color:var(--teal);" class="amt">₹0</td><td style="color:var(--teal);" class="amt">₹0</td><td style="color:var(--teal);" class="amt">₹0</td></tr>
+        <tr class="total-row">
+          <td>TOTAL PER PERSON</td>
+          <td class="amt">₹36,560</td>
+          <td class="amt">₹51,150</td>
+          <td class="amt">₹72,919</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="background:var(--teal-light); border:1px solid rgba(15,110,86,0.2); border-radius:12px; padding:1rem 1.25rem; font-size:0.85rem; color:var(--teal);">
+      <strong>SUV value your friend is covering:</strong> Innova Crysta with driver, Srinagar → Kargil → Leh → Nubra → Pangong → Leh = approx. ₹45,000–55,000 total (₹15,000–18,333 per person if split 3 ways). That's a <strong>huge</strong> gift!
+    </div>
+  </div>
+
+  <!-- ══════════════════════ TIPS ══════════════════════ -->
+  <div class="section" id="section-tips">
+    <h2 class="sec-heading">Essential Tips</h2>
+    <p class="sec-sub">Everything you need to know to have the perfect trip — and nothing to ruin it.</p>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-icon">🏔</div>
+        <h4>Altitude sickness (AMS)</h4>
+        <p>Rest on arrival in Leh. Drink 4+ litres of water daily. No alcohol first 24 hours. Diamox (acetazolamide) helps — consult a doctor before travel. Ascend gradually: Srinagar → Kargil → Leh is the perfect acclimatization route.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📱</div>
+        <h4>SIM cards & connectivity</h4>
+        <p>BSNL is the only telecom that works reliably in Ladakh. Buy a BSNL SIM before leaving Delhi or at Leh airport. No other provider (Jio/Airtel/Vi) works beyond Kargil. Download offline Google Maps for Ladakh.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">💵</div>
+        <h4>Cash is king</h4>
+        <p>ATMs in Leh are scarce and often empty. Withdraw ₹20,000+ in Delhi before boarding the train. Kargil has 1–2 ATMs (often queued). Nubra and Pangong: zero ATMs. Card payments are rare beyond Leh city.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🌤</div>
+        <h4>Best time to visit</h4>
+        <p>June–September for the full route. July–August for Kashmir's wildflower blooms. September for fewer crowds. Avoid October–May: Zoji La closes, Khardung La can be treacherous, and temperatures plunge to -20°C at high passes.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🚗</div>
+        <h4>Your SUV & driver</h4>
+        <p>The Innova Crysta is the perfect vehicle for this terrain — tough, spacious, and high clearance. Trust your driver — they know the roads, passes, and checkpoints. Tip generously (₹1,000–2,000 total is nice). No overtaking at blind bends.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">📄</div>
+        <h4>Documents to carry</h4>
+        <p>Carry 10+ photocopies of your ID (Aadhaar/Passport). Check posts verify IDs frequently. For Inner Line Permits: original ID + photo copies + passport photos. Keep digital scans on Google Drive too.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🧥</div>
+        <h4>Layers are everything</h4>
+        <p>Even in June, Khardung La is -5°C and Pangong is freezing at night. During the day in Srinagar it can be 25°C. Master the art of layering: base layer, fleece, windproof outer shell. Pack thermal underwear regardless of month.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🌞</div>
+        <h4>Sun is brutal at altitude</h4>
+        <p>At 4,000+ metres, UV radiation is extreme. SPF 50+ sunscreen, UV-protective sunglasses, and a wide-brimmed hat are non-negotiable. You can get severe sunburn in 20 minutes at Pangong or Khardung La even on a cloudy day.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🏥</div>
+        <h4>Medical kit</h4>
+        <p>Diamox, ibuprofen, ORS sachets, blister plasters, antiseptic cream, Diamox (125–250 mg/day, prophylactic for altitude). Leh has SNM Hospital and a few private clinics. Nearest major hospital is Chandigarh — 2+ days away by road.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">⛺</div>
+        <h4>Camp booking in Nubra</h4>
+        <p>Book Desert Himalaya Camp or similar luxury camps at Hunder 2–3 months in advance for June–August. These fill up fast. WhatsApp is the easiest booking method. Cost: ₹3,500–6,000 per tent/night including dinner and breakfast.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🚂</div>
+        <h4>Train booking tip</h4>
+        <p>IRCTC opens bookings 60 days in advance. Log in at exactly 8 AM on the opening day for best selection. Tatkal quota opens at 10 AM, 1 day before journey. Consider booking a full coupe (4 berths in 2AC) for your group of 3 — more private.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🕌</div>
+        <h4>Cultural respect</h4>
+        <p>Remove shoes before entering any monastery or mosque. Ask before photographing locals. Don't touch prayer wheels with your left hand. Ladakhi and Kashmiri cultures both deserve respect — local etiquette is warmly appreciated and reciprocated.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════ PACKING ══════════════════════ -->
+  <div class="section" id="section-packing">
+    <h2 class="sec-heading">Packing List</h2>
+    <p class="sec-sub">Everything you need — and nothing you don't. Pack light; the mountains demand it.</p>
+
+    <div class="pack-grid">
+      <div class="pack-cat">
+        <h4>Clothing</h4>
+        <ul>
+          <li>Thermal base layer (top + bottom) × 2</li>
+          <li>Fleece jacket or sweater</li>
+          <li>Windproof/waterproof outer shell</li>
+          <li>Light trekking pants × 2</li>
+          <li>Comfortable walking shoes</li>
+          <li>Warm socks × 4 pairs</li>
+          <li>Gloves (thin liner + thick outer)</li>
+          <li>Woollen cap / beanie</li>
+          <li>Scarf or neck gaiter</li>
+          <li>Light cotton t-shirts × 3</li>
+          <li>Swimwear (houseboat hot tub)</li>
+          <li>Formal clothes for Srinagar dinner</li>
+        </ul>
+      </div>
+      <div class="pack-cat">
+        <h4>Health & Medicine</h4>
+        <ul>
+          <li>Diamox 250mg (altitude sickness)</li>
+          <li>Ibuprofen / Paracetamol</li>
+          <li>ORS sachets (10+)</li>
+          <li>Antiseptic cream + plasters</li>
+          <li>SPF 50+ sunscreen (2 tubes)</li>
+          <li>UV-blocking sunglasses</li>
+          <li>Lip balm with SPF</li>
+          <li>Antihistamine tablets</li>
+          <li>Diarrhoea medication (Norflox)</li>
+          <li>Personal prescription meds</li>
+          <li>Moleskin for blisters</li>
+          <li>Insect repellent (Srinagar)</li>
+        </ul>
+      </div>
+      <div class="pack-cat">
+        <h4>Tech & Gear</h4>
+        <ul>
+          <li>Power bank (20,000+ mAh)</li>
+          <li>Universal travel adapter</li>
+          <li>Camera + extra memory cards</li>
+          <li>BSNL SIM (get in Delhi)</li>
+          <li>Headlamp + spare batteries</li>
+          <li>Offline maps downloaded (Google/Maps.me)</li>
+          <li>Noise-cancelling earphones</li>
+          <li>Action camera (GoPro) if available</li>
+          <li>Laptop/tablet (optional)</li>
+        </ul>
+      </div>
+      <div class="pack-cat">
+        <h4>Documents & Money</h4>
+        <ul>
+          <li>Passport or Aadhaar (original)</li>
+          <li>10+ photocopies of ID</li>
+          <li>10+ passport photos (for permits)</li>
+          <li>Train ticket printout</li>
+          <li>Hotel booking confirmations</li>
+          <li>Travel insurance docs</li>
+          <li>Minimum ₹20,000 cash</li>
+          <li>Emergency contact list (offline)</li>
+          <li>IRCTC app + BSNL activated</li>
+        </ul>
+      </div>
+      <div class="pack-cat">
+        <h4>Day Pack Essentials</h4>
+        <ul>
+          <li>20L backpack (fits one day's needs)</li>
+          <li>1L water bottle (minimum 2 each)</li>
+          <li>Energy bars / dry fruits / trail mix</li>
+          <li>Chocolate (altitude comfort food)</li>
+          <li>Poncho / packable rain jacket</li>
+          <li>Small padlock for bags</li>
+          <li>Wet wipes (30+) — great for dusty roads</li>
+          <li>Toilet paper (carry your own)</li>
+        </ul>
+      </div>
+      <div class="pack-cat">
+        <h4>What NOT to bring</h4>
+        <ul>
+          <li>Heavy suitcase — rolling bags are useless on mountain roads</li>
+          <li>Excessive formal clothing</li>
+          <li>Hairdryer / curling iron (power is unstable)</li>
+          <li>Drone (special permits needed in J&K, army zones)</li>
+          <li>Lots of alcohol (altitude + alcohol = bad)</li>
+          <li>Cotton only outfits — cotton doesn't insulate when wet</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="background:var(--saffron-light); border:1px solid rgba(196,98,26,0.2); border-radius:12px; padding:1.25rem; margin-top:1.5rem;">
+      <h3 style="font-size:1rem; font-weight:500; color:var(--saffron); margin-bottom:0.5rem;">Bag weight tip</h3>
+      <p style="font-size:0.85rem; color:var(--ink2);">Aim for one 45L backpack per person. The SUV has storage but porters and camp luggage handlers prefer manageable bags. Laundry services are available in Srinagar and Leh — pack light and wash on the go.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── FOOTER ── -->
+<footer style="background:var(--ink); color:rgba(248,247,244,0.5); padding:2.5rem; text-align:center; font-size:0.8rem; margin-top:3rem;">
+  <p style="font-family:'Playfair Display', serif; font-size:1.2rem; color:#d4a56a; margin-bottom:0.5rem; font-style:italic;">The mountains are calling.</p>
+  <p>Estimated costs as of 2025–26 season. Prices vary by season and availability. Book trains 60 days ahead. Always check road/pass conditions before departure.</p>
+  <p style="margin-top:0.5rem;">Created with ♥ for three adventurers heading to the rooftop of the world.</p>
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('section-' + id).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleDay(card) {
+    const isOpen = card.classList.contains('open');
+    document.querySelectorAll('.day-card.open').forEach(c => c.classList.remove('open'));
+    if (!isOpen) card.classList.add('open');
+  }
+
+  // Auto-open Day 1 on load
+  document.querySelector('.day-card').classList.add('open');
+</script>
+
+</body>
+</html>
